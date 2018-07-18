@@ -9,7 +9,7 @@
     "server": "nodemon -L server.js",
     "client": "CHOKIDAR_USEPOLLING=true npm start --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
-		"heroku-postbuild": "YARN_PRODUCTION=FALSE yarn install --cwd client && yarn run build --cwd client"
+		"heroku-postbuild": "cd client/ && YARN_PRODUCTION=FALSE yarn install && yarn run build"
   },
   "author": "",
   "license": "MIT",
